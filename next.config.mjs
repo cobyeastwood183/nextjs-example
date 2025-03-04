@@ -24,5 +24,5 @@ const nextConfig = {
 };
 
 export default withSentryConfig(nextConfig, {
-  release: "1.0.0",
+  widenClientFileUpload: true,
 });
