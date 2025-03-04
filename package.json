@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sourcemaps": "sentry-cli sourcemaps inject --org sentry-coby-us --project nextjs ./.next && sentry-cli sourcemaps upload --org sentry-coby-us --project nextjs ./.next"
   },
   "dependencies": {
     "@sentry/nextjs": "^9.3.0",
