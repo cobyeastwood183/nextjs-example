@@ -6,11 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "sourcemaps": "sentry-cli sourcemaps inject --org sentry-coby-us --project nextjs ./.next && sentry-cli sourcemaps upload --org sentry-coby-us --project nextjs ./.next"
+    "lint": "next lint"
   },
   "dependencies": {
     "@sentry/nextjs": "^9.3.0",
+    "@sentry/webpack-plugin": "^3.2.2",
     "next": "15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
