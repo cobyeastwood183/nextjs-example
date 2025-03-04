@@ -1,6 +1,6 @@
 name: Sentry Release
 
-on:[push]
+on: [push]
 
 jobs:
   release:
