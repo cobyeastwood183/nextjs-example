@@ -14,7 +14,7 @@ const nextConfig = {
         release: {
           name: "e92334e9c4c82c966c8477ed9aab845b1116ffd0",
           uploadLegacySourcemaps: {
-            paths: ["./.next"],
+            paths: ["."],
             ignore: ["./node_modules"],
           },
         },
