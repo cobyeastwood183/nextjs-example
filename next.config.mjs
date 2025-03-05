@@ -11,7 +11,7 @@ export default withSentryConfig(nextConfig, {
 
 org: "sentry-coby-us",
 project: "nextjs",
-release: { name: "e92334e9c4c82c966c8477ed9aab845b1116ffd0", inject: true},
+release: { name: "e92334e9c4c82c966c8477ed9aab845b1116ffd0" },
 
 // Only print logs for uploading source maps in CI
 silent: !process.env.CI,
