@@ -14,7 +14,7 @@ const nextConfig = {
         release: {
           name: "e92334e9c4c82c966c8477ed9aab845b1116ffd0",
           uploadLegacySourcemaps: {
-            paths: ["."],
+            paths: ["./.next"],
             ignore: ["./node_modules"],
           },
         },
@@ -25,5 +25,5 @@ const nextConfig = {
 };
 
 export default withSentryConfig(nextConfig, {
-  widenClientFileUpload: true,
+  widenClientFileUpload: true
 });
