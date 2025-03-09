@@ -10,10 +10,9 @@ export default withSentryConfig(nextConfig, {
 
 org: "sentry-coby-us",
 project: "nextjs",
-release: '1.1.8',
-
-// Only print logs for uploading source maps in CI
-silent: !process.env.CI,
+release: {
+  name: "1.1.8",
+},
 
 // For all available options, see:
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
