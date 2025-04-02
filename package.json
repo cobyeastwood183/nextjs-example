@@ -12,6 +12,7 @@
     "@sentry/nextjs": "^9.3.0",
     "@sentry/webpack-plugin": "^3.2.2",
     "next": "15.2.1",
+    "next-intl": "^4.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
