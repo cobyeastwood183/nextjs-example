@@ -5,40 +5,46 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./i18n/requests.js");
 
-const nextConfig = {    output: "standalone",    images: {        remotePatterns: [            {                protocol: "https",                hostname: "cdn.discordapp.com",            },            {                protocol: "https",                hostname: "cdn.winterhost.de",            },            {                protocol: "https",                hostname: "node-internal.winterhost.de",            },        ]    },    webpack: (config, {isServer}) => {        if (!isServer) {            config.resolve.fallback = {                fs: false,            };        }        return config;    },};
+const nextConfig = {
+  reactStrictMode: true,
+};;
 
 const nextIntlConfig = withNextIntl(nextConfig);
 
 export default withSentryConfig(nextIntlConfig, {
-// For all available options, see:
-// https://www.npmjs.com/package/@sentry/webpack-plugin#options
+  // For all available options, see:
+  // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
-org: "sentry-coby-us",
-project: "nextjs",
-release: {
-  name: "1.1.8",
-},
+  org: "sentry-coby-us",
+  project: "nextjs",
+  release: {
+    name: "1.1.8",
+  },
 
-authToken: process.env.SENTRY_AUTH_TOKEN,
+  sourcemaps: {
+    disable: true,
+  },
 
-// For all available options, see:
-// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+  authToken: process.env.SENTRY_AUTH_TOKEN,
 
-// Upload a larger set of source maps for prettier stack traces (increases build time)
-// widenClientFileUpload: true,
+  // For all available options, see:
+  // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
 
-// Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-// This can increase your server load as well as your hosting bill.
-// Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
-// side errors will fail.
-// tunnelRoute: "/monitoring",
+  // Upload a larger set of source maps for prettier stack traces (increases build time)
+  // widenClientFileUpload: true,
 
-// Automatically tree-shake Sentry logger statements to reduce bundle size
-// disableLogger: true,
+  // Route browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
+  // This can increase your server load as well as your hosting bill.
+  // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
+  // side errors will fail.
+  // tunnelRoute: "/monitoring",
 
-// Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
-// See the following for more information:
-// https://docs.sentry.io/product/crons/
-// https://vercel.com/docs/cron-jobs
-automaticVercelMonitors: true,
+  // Automatically tree-shake Sentry logger statements to reduce bundle size
+  // disableLogger: true,
+
+  // Enables automatic instrumentation of Vercel Cron Monitors. (Does not yet work with App Router route handlers.)
+  // See the following for more information:
+  // https://docs.sentry.io/product/crons/
+  // https://vercel.com/docs/cron-jobs
+  automaticVercelMonitors: true,
 });
