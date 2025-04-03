@@ -11,6 +11,8 @@ const nextConfig = {
 
 const nextIntlConfig = withNextIntl(nextConfig);
 
+console.log(process.env.SENTRY_AUTH_TOKEN);
+
 export default withSentryConfig(nextIntlConfig, {
   // For all available options, see:
   // https://www.npmjs.com/package/@sentry/webpack-plugin#options
