@@ -15,11 +15,8 @@ export default withSentryConfig(nextIntlConfig, {
   // For all available options, see:
   // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
-  org: "sentry-coby-us",
-  project: "nextjs",
-  release: {
-    name: "1.1.8",
-  },
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
 
   sourcemaps: {
     disable: true,
